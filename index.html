@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenHands UI Prototype</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-icons">
+                <div class="icon-group top-icons">
+                    <div class="icon"><i class="fas fa-hands"></i></div>
+                    <div class="icon"><i class="fas fa-plus"></i></div>
+                    <div class="icon"><i class="fas fa-list"></i></div>
+                </div>
+                <div class="icon-group bottom-icons">
+                    <!-- Download icon and graduation hat icon removed as requested -->
+                    <div class="icon"><i class="fas fa-cog"></i></div>
+                    <div class="icon user-icon">
+                        <img src="img/user-avatar.png" alt="User" onerror="this.src='https://via.placeholder.com/30'">
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="header">
+                    <div class="logo">
+                        <img src="img/openhands-logo.png" alt="OpenHands Logo" onerror="this.src='img/default-logo.png'">
+                        <h2>Let's start building!</h2>
+                    </div>
+                </div>
+                <!-- Task list removed as requested -->
+                <div class="task-list">
+                    <!-- Tasks have been removed -->
+                </div>
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <i class="fas fa-paperclip"></i>
+                        <input type="text" placeholder="What do you want to build?">
+                        <button class="send-button"><i class="fas fa-arrow-up"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="tabs">
+                <div class="tab" data-tab="changes"><i class="fas fa-code-branch"></i> Changes</div>
+                <div class="tab active" data-tab="vscode"><i class="fas fa-code"></i> VS Code</div>
+                <div class="tab" data-tab="terminal"><i class="fas fa-terminal"></i> Terminal</div>
+                <div class="tab" data-tab="jupyter"><i class="fas fa-chart-line"></i> Jupyter</div>
+                <div class="tab" data-tab="app"><i class="fas fa-window-maximize"></i> App <span class="beta-tag">BETA</span></div>
+                <div class="tab" data-tab="browser"><i class="fas fa-globe"></i> Browser</div>
+            </div>
+            <div class="content-area">
+                <div id="changes-content" class="tab-content">
+                    <!-- Changes content would go here -->
+                </div>
+                <div id="vscode-content" class="tab-content active">
+                    <!-- VS Code content would go here -->
+                </div>
+                <div id="terminal-content" class="tab-content">
+                    <!-- Terminal content would go here -->
+                </div>
+                <div id="jupyter-content" class="tab-content">
+                    <!-- Jupyter content would go here -->
+                </div>
+                <div id="app-content" class="tab-content">
+                    <!-- App content would go here -->
+                </div>
+                <div id="browser-content" class="tab-content">
+                    <!-- Browser content would go here -->
+                </div>
+            </div>
+            <div class="protip-container">
+                <div class="protip">
+                    <h3>Protip:</h3>
+                    <p>Every OpenHands conversation comes with a VS Code instance, where you can interact with the development environment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="conversation-footer">
+        <div class="conversation-info">
+            <div class="conversation-id">Conversation 46c11</div>
+            <div class="conversation-repo">jpelletier1/openhands-ui-templates</div>
+            <div class="conversation-time">Created 4m ago</div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

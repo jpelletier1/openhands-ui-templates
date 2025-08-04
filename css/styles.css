@@ -1,0 +1,251 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 40px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    background-color: #252526;
+    width: 500px;
+    border-right: 1px solid #3c3c3c;
+}
+
+.sidebar-icons {
+    width: 50px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.icon-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon:hover {
+    background-color: #3c3c3c;
+}
+
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Task List Styles - tasks removed but keeping the container for spacing */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+/* Input Container Styles */
+.input-container {
+    margin-top: auto;
+    padding: 10px 0;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.input-wrapper i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.input-wrapper input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    outline: none;
+    font-size: 14px;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-button:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    display: flex;
+    background-color: #252526;
+    border-bottom: 1px solid #3c3c3c;
+    padding: 0 10px;
+}
+
+.tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tab.active {
+    border-bottom: 2px solid #007acc;
+}
+
+.tab i {
+    font-size: 14px;
+}
+
+.beta-tag {
+    font-size: 10px;
+    background-color: #444;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.content-area {
+    flex: 1;
+    background-color: #1e1e1e;
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    height: 100%;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Protip Container Styles */
+.protip-container {
+    padding: 20px;
+}
+
+.protip {
+    background-color: #252526;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.protip h3 {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.protip p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Conversation Footer Styles */
+.conversation-footer {
+    height: 40px;
+    background-color: #252526;
+    border-top: 1px solid #3c3c3c;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.conversation-info {
+    display: flex;
+    gap: 15px;
+}
+
+/* Default logo for when the image is not available */
+img[src="img/default-logo.png"] {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='60' height='60'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ffcc00'/%3E%3Cpath d='M30,30 Q50,10 70,30 T70,70 Q50,90 30,70 T30,30' fill='%23ffffff'/%3E%3C/svg%3E");
+}
