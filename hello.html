@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello - Current Time</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .time-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .date-display {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .greeting {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .clock-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock-icon">🕐</div>
+        <h1>Hello!</h1>
+        <div class="date-display" id="dateDisplay"></div>
+        <div class="time-display" id="timeDisplay"></div>
+        <div class="greeting" id="greeting"></div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            
+            // Format time
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            
+            // Format date
+            const dateOptions = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+            
+            // Update displays
+            document.getElementById('timeDisplay').textContent = timeString;
+            document.getElementById('dateDisplay').textContent = dateString;
+            
+            // Update greeting based on time of day
+            const hour = now.getHours();
+            let greetingText;
+            
+            if (hour < 12) {
+                greetingText = "Good morning! Have a wonderful day ahead! ☀️";
+            } else if (hour < 17) {
+                greetingText = "Good afternoon! Hope you're having a great day! 🌤️";
+            } else if (hour < 21) {
+                greetingText = "Good evening! Time to wind down! 🌅";
+            } else {
+                greetingText = "Good night! Sweet dreams! 🌙";
+            }
+            
+            document.getElementById('greeting').textContent = greetingText;
+        }
+        
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Add some interactivity
+        document.querySelector('.container').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    </script>
+</body>
+</html>
